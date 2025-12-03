@@ -1,64 +1,53 @@
-let musicList = [];
-let publiList = [];
-let musicIndex = 0;
-let publiIndex = 0;
+let musica = [];
+let publicidad = [];
+let player = document.getElementById("player");
+let publiPlayer = document.getElementById("publiPlayer");
 
-const player = document.getElementById("player");
-const publiPlayer = document.getElementById("publiPlayer");
+let playBtn = document.getElementById("playBtn");
+let titleEl = document.getElementById("songTitle");
+let genreEl = document.getElementById("songGenre");
 
-const playBtn = document.getElementById("playBtn");
-const titleEl = document.getElementById("songTitle");
-const genreEl = document.getElementById("songGenre");
+let currentMusic = null;
+let currentPubli = 0;
+let modoPublicidad = false;
 
-let isPlaying = false;
-let lastPlayTime = Date.now();
-
-// Cargar JSON
-async function loadData() {
-    musicList = await fetch("musica.json").then(r => r.json());
-    publiList = await fetch("publicidad.json").then(r => r.json());
+async function cargarDatos() {
+    musica = await fetch("musica.json").then(r => r.json());
+    publicidad = await fetch("publicidad.json").then(r => r.json());
+    cargarMusicaAleatoria();
 }
 
-function playRandomMusic() {
-    let r = Math.floor(Math.random() * musicList.length);
-    let song = musicList[r];
+function cargarMusicaAleatoria() {
+    modoPublicidad = false;
 
-    player.src = song.song;
-    titleEl.textContent = song.title;
-    genreEl.textContent = song.genre;
+    currentMusic = musica[Math.floor(Math.random() * musica.length)];
+
+    player.src = currentMusic.song;
+    titleEl.textContent = obtenerNombre(currentMusic.song);
+    genreEl.textContent = currentMusic.genero;
 
     player.play();
-    isPlaying = true;
 }
 
-function playPublicidad() {
-    if (publiIndex >= publiList.length) publiIndex = 0;
+function reproducirPublicidad() {
+    modoPublicidad = true;
 
-    publiPlayer.src = publiList[publiIndex].song;
-    publiIndex++;
+    let item = publicidad[currentPubli];
+    publiPlayer.src = item.song;
 
-    titleEl.textContent = "Publicidad";
-    genreEl.textContent = "---";
+    currentPubli++;
+    if (currentPubli >= publicidad.length) currentPubli = 0;
 
     publiPlayer.play();
 }
 
-// cada 10 minutos → anuncio
-setInterval(() => {
-    playPublicidad();
-}, 600000);
+function obtenerNombre(ruta) {
+    return ruta.split("/").pop().replace(".mp3", "");
+}
 
-// al terminar publicidad vuelve música
-publiPlayer.addEventListener("ended", () => {
-    playRandomMusic();
-});
+playBtn.onclick = () => player.paused ? player.play() : player.pause();
 
-// botón
-playBtn.addEventListener("click", () => {
-    if (!isPlaying) {
-        playRandomMusic();
-    }
-});
+player.onended = () => reproducirPublicidad();
+publiPlayer.onended = () => cargarMusicaAleatoria();
 
-// iniciar
-loadData();
+cargarDatos();
