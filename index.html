@@ -3,26 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natio Station</title>
+    <title>Natio Station – La voz oficial de Natio States</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <img src="logo.png" class="logo">
+        <img src="logo.png" alt="Natio Station" class="logo">
         <h2 class="lema">Natio Station – La voz oficial de Natio States</h2>
     </header>
 
     <main>
         <div class="player-box">
-            <button id="playBtn" class="play-btn">▶</button>
 
-            <h3 id="songTitle" class="song-title">Cargando...</h3>
-            <p id="songGenre" class="song-genre">---</p>
+            <!-- ESTE ID ES EL QUE DEBE LEER EL JS -->
+            <button id="btnPlay" class="play-btn" aria-label="Play">▶</button>
+
+            <!-- ESTE NOMBRE TAMBIÉN DEBE SER EXACTO -->
+            <h3 id="title" class="song-title">Cargando...</h3>
+
+            <!-- ESTE DEBE SER songGenre = genero -->
+            <p id="genero" class="song-genre">---</p>
         </div>
     </main>
 
+    <!-- REPRODUCTOR PRINCIPAL -->
     <audio id="player" preload="auto"></audio>
+
+    <!-- REPRODUCTOR DE PUBLICIDAD -->
     <audio id="publiPlayer" preload="auto"></audio>
 
     <script src="app.js"></script>
