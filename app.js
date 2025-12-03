@@ -1,64 +1,70 @@
-let musicList = [];
-let adsList = [];
-let currentSong = 0;
+let player = document.getElementById("player");
+let publiPlayer = document.getElementById("publiPlayer");
+let playBtn = document.getElementById("playBtn");
 
-const player = document.getElementById("audioPlayer");
-const title = document.getElementById("song-title");
-const author = document.getElementById("song-author");
-const statusMsg = document.getElementById("statusMsg");
+// Datos cargados
+let canciones = [];
+let publicidad = [];
 
-// Cargar JSON de música
-async function loadMusic() {
-    const res = await fetch("musica.json");
-    musicList = await res.json();
+let indiceMusica = 0;
+let indicePubli = 0;
+
+let reproduciendo = false;
+
+// Cargar música y publicidad
+fetch("musica.json")
+    .then(res => res.json())
+    .then(data => {
+        // mezclar aleatorio (shuffle)
+        canciones = data.sort(() => Math.random() - 0.5);
+        cargarCancion(0);
+    });
+
+fetch("publicidad.json")
+    .then(res => res.json())
+    .then(data => {
+        publicidad = data; // esta SI va en orden
+    });
+
+// Cargar canción
+function cargarCancion(i) {
+    let c = canciones[i];
+    player.src = "musica/" + c.song;
+    document.getElementById("songTitle").textContent = c.titulo;
+    document.getElementById("songGenre").textContent = c.genero;
 }
 
-// Cargar JSON de publicidad
-async function loadAds() {
-    const res = await fetch("publicidad.json");
-    adsList = await res.json();
-}
+// Botón Play/Pause
+playBtn.addEventListener("click", () => {
+    if (!reproduciendo) {
+        player.play();
+        reproduciendo = true;
+        playBtn.textContent = "⏸";
+    } else {
+        player.pause();
+        reproduciendo = false;
+        playBtn.textContent = "▶";
+    }
+});
 
-// Reproducir canción
-function playSong(index) {
-    const song = musicList[index];
-    title.textContent = song.titulo;
-    author.textContent = song.autor;
-    player.src = song.song;
+// Cuando termina una canción → pasar a otra aleatoria
+player.addEventListener("ended", () => {
+    indiceMusica++;
+    if (indiceMusica >= canciones.length) {
+        indiceMusica = 0;
+    }
+    cargarCancion(indiceMusica);
     player.play();
-    statusMsg.textContent = "Reproduciendo música...";
-}
+});
 
-// Reproducir publicidad aleatoria
-function playRandomAd() {
-    const ad = adsList[Math.floor(Math.random() * adsList.length)];
-    statusMsg.textContent = "Publicidad...";
-    player.src = ad.song;
-    player.play();
-}
+// Publicidad cada 10 minutos
+setInterval(() => {
+    let ad = publicidad[indicePubli];
+    publiPlayer.src = "publicidad/" + ad.archivo;
+    publiPlayer.play();
 
-// Ciclo de música → publicidad cada 10 minutos
-function scheduleAds() {
-    setInterval(() => {
-        playRandomAd();
-
-        player.onended = () => {
-            playSong(currentSong);
-        };
-
-    }, 10 * 60 * 1000);
-}
-
-// Continuar con la siguiente canción
-player.onended = () => {
-    currentSong = (currentSong + 1) % musicList.length;
-    playSong(currentSong);
-};
-
-// Iniciar todo
-(async () => {
-    await loadMusic();
-    await loadAds();
-    playSong(0);
-    scheduleAds();
-})();
+    indicePubli++;
+    if (indicePubli >= publicidad.length) {
+        indicePubli = 0;
+    }
+}, 600000); // 10 minutos
