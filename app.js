@@ -1,104 +1,64 @@
+let musicList = [];
+let publiList = [];
+let musicIndex = 0;
+let publiIndex = 0;
+
 const player = document.getElementById("player");
-const btnPlay = document.getElementById("btnPlay");
-const titleEl = document.getElementById("title");
-const generoEl = document.getElementById("genero");
+const publiPlayer = document.getElementById("publiPlayer");
 
-let musica = [];
-let publicidad = [];
-let currentSong = null;
+const playBtn = document.getElementById("playBtn");
+const titleEl = document.getElementById("songTitle");
+const genreEl = document.getElementById("songGenre");
+
 let isPlaying = false;
+let lastPlayTime = Date.now();
 
-// ---------------------------
-// Cargar música
-// ---------------------------
-fetch("musica.json")
-  .then(res => res.json())
-  .then(data => {
-    musica = data;
-    loadRandomSong();
-  })
-  .catch(err => console.error("Error cargando musica.json:", err));
-
-// ---------------------------
-// Cargar publicidad
-// ---------------------------
-fetch("publicidad.json")
-  .then(res => res.json())
-  .then(data => {
-    publicidad = data;
-  })
-  .catch(err => console.error("Error cargando publicidad.json:", err));
-
-
-// ---------------------------
-// Reproducir canción aleatoria
-// ---------------------------
-function loadRandomSong() {
-    if (musica.length === 0) return;
-
-    const randomIndex = Math.floor(Math.random() * musica.length);
-    currentSong = musica[randomIndex];
-
-    // 🚨 RUTA CORRECTA para GitHub / Neocities
-    player.src = "musica/" + currentSong.song;
-
-    titleEl.textContent = currentSong.titulo;
-    generoEl.textContent = currentSong.genero ? currentSong.genero : "Sin género";
-
-    playAudio();
+// Cargar JSON
+async function loadData() {
+    musicList = await fetch("musica.json").then(r => r.json());
+    publiList = await fetch("publicidad.json").then(r => r.json());
 }
 
-// ---------------------------
-// Reproducir publicidad en orden
-// ---------------------------
-let pubIndex = 0;
+function playRandomMusic() {
+    let r = Math.floor(Math.random() * musicList.length);
+    let song = musicList[r];
 
-function reproducirPublicidad() {
-    if (publicidad.length === 0) return;
+    player.src = song.song;
+    titleEl.textContent = song.title;
+    genreEl.textContent = song.genre;
 
-    const anuncio = publicidad[pubIndex];
-    pubIndex = (pubIndex + 1) % publicidad.length;
-
-    player.src = "publicidad/" + anuncio.song;
-    titleEl.textContent = anuncio.titulo;
-    generoEl.textContent = "Publicidad";
-
-    playAudio();
-    player.onended = () => loadRandomSong();  // vuelve a la música
+    player.play();
+    isPlaying = true;
 }
 
-// ---------------------------
-// Reproducción
-// ---------------------------
-function playAudio() {
-    player.play()
-        .then(() => {
-            btnPlay.textContent = "⏸";
-            isPlaying = true;
-        })
-        .catch(err => {
-            console.error("No se pudo reproducir:", err);
-        });
+function playPublicidad() {
+    if (publiIndex >= publiList.length) publiIndex = 0;
+
+    publiPlayer.src = publiList[publiIndex].song;
+    publiIndex++;
+
+    titleEl.textContent = "Publicidad";
+    genreEl.textContent = "---";
+
+    publiPlayer.play();
 }
 
-function pauseAudio() {
-    player.pause();
-    btnPlay.textContent = "▶";
-    isPlaying = false;
-}
+// cada 10 minutos → anuncio
+setInterval(() => {
+    playPublicidad();
+}, 600000);
 
-
-// ---------------------------
-// Botón Play/Pause
-// ---------------------------
-btnPlay.addEventListener("click", () => {
-    if (isPlaying) pauseAudio();
-    else playAudio();
+// al terminar publicidad vuelve música
+publiPlayer.addEventListener("ended", () => {
+    playRandomMusic();
 });
 
-// ---------------------------
-// Cada 10 minutos → Publicidad
-// ---------------------------
-setInterval(() => {
-    reproducirPublicidad();
-}, 10 * 60 * 1000);
+// botón
+playBtn.addEventListener("click", () => {
+    if (!isPlaying) {
+        playRandomMusic();
+    }
+});
+
+// iniciar
+loadData();
