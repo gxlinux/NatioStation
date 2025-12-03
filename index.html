@@ -15,15 +15,16 @@
 
     <main>
         <div class="player-box">
-            <button id="playBtn" class="play-btn">▶</button>
+            <button id="playBtn" class="play-btn" aria-label="Play">▶</button>
 
             <h3 id="songTitle" class="song-title">Cargando...</h3>
+            <!-- ahora mostramos el GENÉRO (no el autor) -->
             <p id="songGenre" class="song-genre">---</p>
         </div>
     </main>
 
-    <audio id="player"></audio>
-    <audio id="publiPlayer"></audio>
+    <audio id="player" preload="auto"></audio>
+    <audio id="publiPlayer" preload="auto"></audio>
 
     <script src="app.js"></script>
 </body>
