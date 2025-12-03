@@ -1,47 +1,41 @@
 body {
-    margin: 0;
     background: #ffffff;
     color: #000;
     font-family: Arial, sans-serif;
-}
-
-header {
     text-align: center;
-    padding: 20px 0;
 }
 
 .logo {
-    width: 180px;
+    width: 260px;
+    margin: 20px auto;
     display: block;
-    margin: 0 auto;
 }
 
 .lema {
-    color: #c40000;
-    margin-top: 5px;
+    color: #d60000;
+    font-weight: bold;
 }
 
 .player-box {
-    text-align: center;
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 .play-btn {
-    background: #ff0000;
-    border: none;
+    font-size: 40px;
+    background: #d60000;
     color: #fff;
-    font-size: 50px;
+    border: none;
+    padding: 20px;
     border-radius: 50%;
-    padding: 20px 30px;
     cursor: pointer;
 }
 
 .song-title {
-    margin-top: 25px;
-    color: #c40000;
+    color: #d60000;
+    margin-top: 20px;
 }
 
 .song-genre {
-    color: #000000;
+    color: #000;
     font-weight: bold;
 }
