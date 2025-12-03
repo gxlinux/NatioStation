@@ -15,15 +15,22 @@
 
     <main>
         <div class="player-box">
-            <button id="playBtn" class="play-btn" aria-label="Play">▶</button>
 
-            <h3 id="songTitle" class="song-title">Cargando...</h3>
-            <!-- ahora mostramos el GENÉRO (no el autor) -->
-            <p id="songGenre" class="song-genre">---</p>
+            <!-- ESTE ID ES EL QUE DEBE LEER EL JS -->
+            <button id="btnPlay" class="play-btn" aria-label="Play">▶</button>
+
+            <!-- ESTE NOMBRE TAMBIÉN DEBE SER EXACTO -->
+            <h3 id="title" class="song-title">Cargando...</h3>
+
+            <!-- ESTE DEBE SER songGenre = genero -->
+            <p id="genero" class="song-genre">---</p>
         </div>
     </main>
 
+    <!-- REPRODUCTOR PRINCIPAL -->
     <audio id="player" preload="auto"></audio>
+
+    <!-- REPRODUCTOR DE PUBLICIDAD -->
     <audio id="publiPlayer" preload="auto"></audio>
 
     <script src="app.js"></script>
