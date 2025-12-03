@@ -1,92 +1,50 @@
 [
-    {
-        "titulo": "Agonia",
-        "autor": "musica del recuerdo",
-        "song": "musica/agonia.mp3"
-    },
-    {
-        "titulo": "Viviana",
-        "autor": "balada pop",
-        "song": "musica/Viviana.mp3"
-    },
-    {
-        "titulo": "personalidad de perro",
-        "autor": "balada rock",
-        "song": "musica/Personalidad de Perro.mp3"
-    },
-    {
-        "titulo": "lovers under",
-        "autor": "balada rock",
-        "song": "musica/Lovers Under mp3"
-    },
-    {
-        "titulo": "Agonia",
-        "autor": "musica del recuerdo",
-        "song": "musica/agonia.mp3"
-    },
-    {
-        "titulo": "Agonia",
-        "autor": "musica del recuerdo",
-        "song": "musica/agonia.mp3"
-    },
-    {
-        "titulo": "Agonia",
-        "autor": "musica del recuerdo",
-        "song": "musica/agonia.mp3"
-    },
-    {
-        "titulo": "Agonia",
-        "autor": "musica del recuerdo",
-        "song": "musica/agonia.mp3"
-    },
-    {
-        "titulo": "Agonia",
-        "autor": "musica del recuerdo",
-        "song": "musica/agonia.mp3"
-    },
-    {
-        "titulo": "Agonia",
-        "autor": "musica del recuerdo",
-        "song": "musica/agonia.mp3"
-    },
-    {
-        "titulo": "Agonia",
-        "autor": "musica del recuerdo",
-        "song": "musica/agonia.mp3"
-    },
-    {
-        "titulo": "Agonia",
-        "autor": "musica del recuerdo",
-        "song": "musica/agonia.mp3"
-    },
-    {
-        "titulo": "Agonia",
-        "autor": "musica del recuerdo",
-        "song": "musica/agonia.mp3"
-    },
-    {
-        "titulo": "Agonia",
-        "autor": "musica del recuerdo",
-        "song": "musica/agonia.mp3"
-    },
-    {
-        "titulo": "Agonia",
-        "autor": "musica del recuerdo",
-        "song": "musica/agonia.mp3"
-    },
-    {
-        "titulo": "Agonia",
-        "autor": "musica del recuerdo",
-        "song": "musica/agonia.mp3"
-    },
-    {
-        "titulo": "Agonia",
-        "autor": "musica del recuerdo",
-        "song": "musica/agonia.mp3"
-    },
-    {
-        "titulo": "Tu Mirada",
-        "autor": "Los Sentimentales",
-        "song": "musica/tu_mirada.mp3"
-    }
+  { "titulo": "Yotuve School Anthem", "song": "Yotuve School Anthem.mp3", "genero": "" },
+  { "titulo": "Warrior's Soft Dream", "song": "Warrior's Soft Dream.mp3", "genero": "" },
+  { "titulo": "Viviana", "song": "Viviana.mp3", "genero": "" },
+  { "titulo": "Viral Academy", "song": "Viral Academy.mp3", "genero": "" },
+  { "titulo": "Time Lost (2)", "song": "Time Lost(2).mp3", "genero": "" },
+  { "titulo": "Time Lost (1)", "song": "Time Lost(1).mp3", "genero": "" },
+  { "titulo": "Time Lost", "song": "Time Lost.mp3", "genero": "" },
+  { "titulo": "Quiero una Mami (1)", "song": "Quiero, una Mami, (1).mp3", "genero": "" },
+  { "titulo": "Quiero una Mami", "song": "Quiero, una Mami, .mp3", "genero": "" },
+  { "titulo": "Quiero un macho", "song": "quiero un macho .mp3", "genero": "" },
+  { "titulo": "Que Ñero (1)", "song": "que ñero(1).mp3", "genero": "" },
+  { "titulo": "Que Ñero", "song": "que ñero.mp3", "genero": "" },
+  { "titulo": "Pienso con mis manos (3)", "song": "Pienso con mis manos,(3).mp3", "genero": "" },
+  { "titulo": "Pienso con mis manos (1)", "song": "Pienso con mis manos,(1).mp3", "genero": "" },
+  { "titulo": "Pienso con mis manos", "song": "Pienso con mis manos,.mp3", "genero": "" },
+  { "titulo": "Pienso con…", "song": "Pienso con .mp3", "genero": "" },
+  { "titulo": "Personalidad de Perro", "song": "Personalidad de Perro.mp3", "genero": "" },
+  { "titulo": "Mis piernas estarán cerradas", "song": "mis piernas estaran cerradas .mp3", "genero": "" },
+  { "titulo": "Maluco Con Yuritza (1)", "song": "Maluco Con Yuritza(1).mp3", "genero": "" },
+  { "titulo": "Maluco Con Yuritza", "song": "Maluco Con Yuritza.mp3", "genero": "" },
+  { "titulo": "Lovers Under", "song": "Lovers Under mp3", "genero": "" },
+  { "titulo": "Lovers Under Fire", "song": "Lovers Under Fire.mp3", "genero": "" },
+  { "titulo": "Kaos Viral", "song": "Kaos Viral_ kaka kaos kaos kaos kaos vir.mp3", "genero": "" },
+  { "titulo": "Hazlo Tú Mismo (Sin Pedir Permiso) (2)", "song": "Hazlo Tú Mismo (Sin Pedir Permiso)”(2).mp3", "genero": "" },
+  { "titulo": "Hazlo Tú Mismo (Sin Pedir Permiso) (1)", "song": "Hazlo Tú Mismo (Sin Pedir Permiso)”(1).mp3", "genero": "" },
+  { "titulo": "Hazlo Tú Mismo (Sin Pedir Permiso)", "song": "Hazlo Tú Mismo (Sin Pedir Permiso)”.mp3", "genero": "" },
+  { "titulo": "Hay un hombre en la sombra", "song": "Hay un hombre en la sombra.mp3", "genero": "" },
+  { "titulo": "Hay un hombre en la sombra (Jared Kushne)", "song": "Hay un hombre en la sombra. Jared Kushne.mp3", "genero": "" },
+  { "titulo": "Hago llorar al Alma (1)", "song": "Hago llorar al Alma_(1).mp3", "genero": "" },
+  { "titulo": "Hago llorar al Alma (1) - segunda copia", "song": "Hago llorar al Alma_(1).mp3", "genero": "" },
+  { "titulo": "Hago llorar al Alma", "song": "Hago llorar al Alma_.mp3", "genero": "" },
+  { "titulo": "Hago llorar al alma (1)", "song": "Hago llorar al alma(1).mp3", "genero": "" },
+  { "titulo": "Hago llorar al alma", "song": "Hago llorar al alma.mp3", "genero": "" },
+  { "titulo": "En un rincón donde el algoritmo no llegó (1)", "song": "En un rincón donde el algoritmo no llegó(1).mp3", "genero": "" },
+  { "titulo": "En un rincón donde el algoritmo no llegó", "song": "En un rincón donde el algoritmo no llegó.mp3", "genero": "" },
+  { "titulo": "Empeloto", "song": "empeloto.mp3", "genero": "" },
+  { "titulo": "El Mundo de Lágrimas", "song": "El Mundo de Lágrimas.mp3", "genero": "" },
+  { "titulo": "El Jangueo La Ganga", "song": "el jangueo la ganga.mp3", "genero": "" },
+  { "titulo": "El Fu Fu", "song": "el fu fu .mp3", "genero": "" },
+  { "titulo": "El Camino del Youtuber", "song": "El Camino del Youtuber.mp3", "genero": "" },
+  { "titulo": "Donde las esquinas hablan y las paredes respiran", "song": "Donde las esquinas hablan y las paredes respiran,.mp3", "genero": "" },
+  { "titulo": "Doctor Loco", "song": "Doctor Loco.mp3", "genero": "" },
+  { "titulo": "Caos Vocal", "song": "Caos Vocal.mp3", "genero": "" },
+  { "titulo": "Broken wires humming under my skin", "song": "Broken wires humming under my skin,.mp3", "genero": "" },
+  { "titulo": "Arracacha", "song": "Arracacha.mp3", "genero": "" },
+  { "titulo": "Agonía", "song": "agonia.mp3", "genero": "" },
+  { "titulo": "Macho", "song": "macho.mp3", "genero": "" },
+  { "titulo": "404 Society DIY Yeah", "song": "404… Society… DIY… yeah.mp3", "genero": "" }
 ]
