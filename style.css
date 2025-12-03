@@ -1,34 +1,51 @@
 body {
-    background: #111;
-    color: #fff;
+    background: #ffffff;
     font-family: Arial, sans-serif;
+    margin: 0;
     text-align: center;
-    padding: 40px;
+    color: #000;
 }
 
-.radio-container {
-    background: linear-gradient(135deg, #ff3366, #ff8800);
-    padding: 30px;
-    border-radius: 20px;
-    max-width: 500px;
-    margin: auto;
-    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+.logo {
+    width: 180px;
+    margin-top: 20px;
+}
+
+.lema {
+    color: #E10600;
+    font-weight: bold;
+    margin-bottom: 40px;
 }
 
 .player-box {
-    margin-top: 25px;
-    background: rgba(255,255,255,0.1);
-    padding: 20px;
-    border-radius: 15px;
+    padding: 30px;
 }
 
-audio {
-    width: 100%;
-    margin-top: 10px;
+.play-btn {
+    width: 130px;
+    height: 130px;
+    background: #E10600;
+    border: none;
+    border-radius: 50%;
+    font-size: 50px;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
 }
 
-.status {
-    margin-top: 20px;
-    font-size: 14px;
-    opacity: 0.8;
+.play-btn:active {
+    transform: scale(0.95);
+}
+
+.song-title {
+    font-size: 24px;
+    color: #E10600;
+    font-weight: bold;
+}
+
+.song-genre {
+    font-size: 20px;
+    color: #000;
+    margin-top: 5px;
 }
