@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Natio Station - La Emisora del Amor</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natio Station – La voz oficial de Natio States</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="radio-container">
-    <h1>Natio Station</h1>
-    <h3>La Emisora del Amor ❤️</h3>
+    <header>
+        <img src="logo.png" alt="Natio Station" class="logo">
+        <h2 class="lema">Natio Station – La voz oficial de Natio States</h2>
+    </header>
 
-    <div class="player-box">
-        <h2 id="song-title">Cargando...</h2>
-        <h4 id="song-author"></h4>
+    <main>
+        <div class="player-box">
+            <button id="playBtn" class="play-btn">▶</button>
 
-        <audio id="audioPlayer" controls></audio>
-    </div>
+            <h3 id="songTitle" class="song-title">Cargando...</h3>
+            <p id="songGenre" class="song-genre">---</p>
+        </div>
+    </main>
 
-    <div class="status">
-        <p id="statusMsg">Reproduciendo música...</p>
-    </div>
-</div>
+    <audio id="player"></audio>
+    <audio id="publiPlayer"></audio>
 
-<script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
