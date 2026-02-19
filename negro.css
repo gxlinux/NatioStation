@@ -1,0 +1,52 @@
+body {
+    /* Fondo gris claro para que resalten las letras */
+    background: #e0e0e0; 
+    color: #000000;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.logo {
+    width: 260px;
+    margin: 20px auto;
+    display: block;
+}
+
+.lema {
+    /* Mantengo el estilo pero en negro para consistencia */
+    color: #000000;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.player-box {
+    margin-top: 40px;
+}
+
+.play-btn {
+    font-size: 40px;
+    background: #000000; /* Botón negro */
+    color: #ffffff;      /* Icono/Texto blanco */
+    border: none;
+    padding: 25px;
+    border-radius: 0%;   /* 0% lo hace totalmente cuadrado */
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.play-btn:hover {
+    background: #333333; /* Efecto al pasar el mouse */
+}
+
+.song-title {
+    color: #000000;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.song-genre {
+    color: #333333;
+    font-weight: normal;
+}
